@@ -9,8 +9,8 @@ d1.daysTo(d2) should return quantity of complete days from d1 to d2. -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <!-- <script src="js/custom.js" type="text/javascript"></script> -->
+  <title>Task 1:Assigment</title>
+  <!-- <script src="day1.js" type="text/javascript"></script> -->
 </head>
 
 <body>
@@ -19,21 +19,36 @@ d1.daysTo(d2) should return quantity of complete days from d1 to d2. -->
 
   <p>Task 1:Extend JS Date object with a method daysTo() which returns number of complete days between any pair of JS
     date objects: d1.daysTo(d2) should return quantity of complete days from d1 to d2.</p>
-  <button type="button" onclick="GetDayDiff()">Submit</button>
 
-  <script>
-    // var d1 = new Date();
-    // var d2 = new Date();
-    // document.getElementById("Demo").innerHTML =d1;
+  <button type="button" onclick="GetDayDifference()">Submit</button>
 
-    function GetDayDiff() {
+  <script type="text/javascript">
+    function GetDayDifference() {
 
+  
       Date.prototype.daysTo = function (futuredate) {
-        var oneday = 24 * 60 * 60 * 100;             // houres*mins*sec*milliseconds
+        var oneday = 24 * 60 * 60 * 1000;  // houres*mins*sec*milliseconds
+        console.log(oneday);
 
-        var firstDate = new Date(this.getTime());     // first date in milliseconds
+        var d1 = new Date();    // first date
+        console.log(d1);
 
+        var time = d1.getTime();
+
+        var d2 = futuredate.getTime();    // Second date 
+        console.log(d2);
+
+        var diffDays = Math.round(Math.abs(d1 - d2) / oneday);
+
+        return diffDays;
       }
+      var currentDate = new Date();
+      var futureDate = new Date();
+
+      futureDate.setDate(currentDate.getDate() + 7);
+         
+      console.log(currentDate.daysTo(futureDate));
+
 
     }
   </script>

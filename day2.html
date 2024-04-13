@@ -26,20 +26,18 @@
                 var diffDays = Math.round(Math.abs((firstDate - secondDate) / oneday));
                 return diffDays;
             }
+            //2 object need to create to calculate days differ
+            var currentDate = new Date(); // Current date
+            var futureDate = new Date(); //current date
+
+
+            futureDate.setDate(currentDate.getDate() + 7); // Setting a date 7 days from now
+
+            //call the .daysTo function -call transfer to line no 18
+            console.log(currentDate.daysTo(futureDate));
+
         }
-
-        //2 object need to create to calculate days differ
-var currentDate = new Date(); // Current date
-var futureDate = new Date(); //current date
-
-
-futureDate.setDate(currentDate.getDate() + 7); // Setting a date 7 days from now
-
-//call the .daysTo function -call transfer to line no 18
-console.log(currentDate.daysTo(futureDate));
-
-
-// Date.prototype.daysTo=function();
+        // Date.prototype.daysTo=function();
 
     </script>
 </head>
@@ -49,13 +47,3 @@ console.log(currentDate.daysTo(futureDate));
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
