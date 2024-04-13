@@ -4,46 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script type="text/javascript">
-
-        function GetDifference() {
-            //step 1:
-            //extend JS Date Object .daysTo - user is creating  method 
-            //step 2: adding parameters
-            Date.prototype.daysTo = function (futuredate) {
-                //step 3: calculting complete oneday
-                var oneday = 24 * 60 * 60 * 1000;   //hours*mins*sec*milliseconds
-                console.log(oneday);
-                //first date in milliseconds
-                var firstDate = new Date();
-                console.log(firstDate);
-                var time = firstDate.getTime();
-
-                var secondDate = futuredate.getTime();
-
-                var diffDays = Math.round(Math.abs((firstDate - secondDate) / oneday));
-                return diffDays;
-            }
-            //2 object need to create to calculate days differ
-            var currentDate = new Date(); // Current date
-            var futureDate = new Date(); //current date
-
-
-            futureDate.setDate(currentDate.getDate() + 7); // Setting a date 7 days from now
-
-            //call the .daysTo function -call transfer to line no 18
-            console.log(currentDate.daysTo(futureDate));
-
-        }
-        // Date.prototype.daysTo=function();
-
-    </script>
+    <title>Task 2:Assigment</title>
 </head>
 
 <body>
-    <button type="button" onclick="GetDifference()">show</button>
+    <h1>Wellcome to JS Task</h1>
+    <button type="button" onclick="getOrdere()">show</button>
+
+
+    <script type="text/javascript">
+        function getOrdere() {
+
+            var sales = [
+                { amount: 10000, quantity: 10 },
+                { amount: 11000, quantity: 20 },
+                { amount: 1000, quantity: 30 }
+            ];
+            
+            function orderedSales(sales) {
+                return sales.map(s => ({ ...sales, Total: s.amount * s.quantity })).sort((a, b) => b.Total - a.Total);
+            }
+            var orderedSalesArray = orderedSales(sales);
+
+            console.log(orderedSalesArray);
+        }
+    </script>
+
 </body>
 
 </html>
