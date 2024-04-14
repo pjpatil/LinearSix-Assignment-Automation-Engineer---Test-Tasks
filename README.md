@@ -9,5 +9,7 @@
 * Test Tasks : 3
 
   Develop a program “Object Projection”. Input: any JSON object; prototype object. Output: projected object. Projected object structure shall be intersection of source object and prototype object structures. Values of properties in projected object shall be the same as values of respective properties in source object.
+  For example:
+  
 * Test Tasks : 4
 * Test Tasks : 5
