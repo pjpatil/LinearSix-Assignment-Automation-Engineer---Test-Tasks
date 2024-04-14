@@ -9,21 +9,27 @@
 
 <body>
     <h1>Wellcome to JS Task</h1>
-    <button type="button" onclick="getOrdere()">show</button>
+    <p>Task 2: Please order by Total
+        Develop a program which produces ordered array of sales. Input: array of objects with the following structure
+        {amount: 10000, quantity: 10}. Output: new array of ordered sales. Array element structure should be: {amount:
+        10000, quantity: 10, Total: 100000}, where Total = amount * quantity. Please order by Total and note that input
+        array shall remain intact.</p>
+    <button type="button" onclick="getOrdere()">Get Order</button>
 
 
     <script type="text/javascript">
         function getOrdere() {
 
-            var sales = [
-                { amount: 10000, quantity: 10 },
-                { amount: 11000, quantity: 20 },
-                { amount: 1000, quantity: 30 }
-            ];
-            
             function orderedSales(sales) {
                 return sales.map(s => ({ ...sales, Total: s.amount * s.quantity })).sort((a, b) => b.Total - a.Total);
             }
+            var sales = [
+                { amount: 10000, quantity: 10 },
+                { amount: 11000, quantity: 20 },
+                { amount: 1000, quantity: 30 },
+                { amount: 500, quantity: 20 }
+            ];
+
             var orderedSalesArray = orderedSales(sales);
 
             console.log(orderedSalesArray);
