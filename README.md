@@ -20,7 +20,7 @@ Alternatively (if 3.1 is too difficult to develop) provide sequence of REST API 
 * Test Tasks : 5
 
   Create tables and insert data
-Create table ** “user”** with the following structure:
+Create table **user** with the following structure:
 [id] int,
 [firstName] varchar(255), [lastName] varchar(255), [email] varchar(255), [cultureID] int,
 [deleted] bit,
