@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 3:Assigment</title>
-</head>
-<body>
-    <h1>Wellcome to JS Task</h1>
-  <button type="button" onclick="sam()">Submit</button>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3:Assigment</title>
 
   <script type="text/javascript">
-    
+    function objectProjection(sourceObject, prototypeObject) {
+      const projectedObject = {};
+
+      for (var key in prototypeObject) {
+        if (sourceObject.hasOwnProperty(key)) {
+          projectedObject[key] = sourceObject[key];
+
+        }
+      }
+      return projectedObject;
+    }
+    var sourceObject = {
+      name: "AJ Styles",
+      age: 30,
+      email: "ajstyles@gmail.com"
+
+    };
+
+    var prototypeObject = {
+      name: "",
+      age: 0,
+    };
+
+
+    const projectedObject = objectProjection(sourceObject, prototypeObject);
+    console.log("Projected Object:", projectedObject);
+
   </script>
+</head>
+
+<body>
+  <h1>Wellcome to JS Task</h1>
+  <button type="button" onclick="objectProjection()">Submit</button>
+
 </body>
+
 </html>
+
